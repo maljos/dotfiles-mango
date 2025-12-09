@@ -1,0 +1,80 @@
+/* ~/.config/waybar/style.css */
+
+@define-color texto-base-color #90a6ad;
+@define-color texto-hover-color #688c68;
+@define-color texto-selected-color #855f88;
+@define-color bg-color #2a3334;
+@define-color border-color #3d5557;
+@define-color button-bg transparent;
+@define-color disable-color #1a1e1f;
+@define-color fondo-areas rgba(61, 84, 69, 0.5);
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family:
+    JetBrainsMono Nerd Font,
+    Helvetica,
+    Arial,
+    sans-serif;
+  min-height: 0;
+}
+
+#waybar {
+  color: @texto-base-color;
+  background-color: @bg-color;
+  border-bottom: 2px solid @border-color;
+}
+
+#waybar .module {
+  padding: 0 5px;
+}
+
+/* Estilo para el módulo de Workspaces (el que usa el script de Mango) */
+#workspaces button {
+  font-size: 16px;
+  padding: 0px 5px;
+  margin: 0px;
+  background-color: @button-bg;
+  color: @texto-base-color;
+}
+
+/* Esto requerirá clases dinámicas en el script de Mango, pero es la base */
+#workspaces button.hidden {
+  color: @disable-color;
+}
+
+#workspaces button:hover {
+  color: @texto-hover-color;
+  background-color: @border-color;
+  box-shadow: 4px -2px @border-color;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+  color: @texto-selected-color;
+  box-shadow: inset 0 -2px @bg-color;
+}
+
+#window {
+  color: @texto-selected-color;
+}
+
+#memory,
+#disk,
+#custom-home,
+#custom-nvidia,
+#pulseaudio,
+#clock,
+#try {
+  font-size: 13px;
+  padding: 0px 5px;
+  color: @texto-base-color;
+  background-color: @fondo-areas;
+}
+
+#custom-nvidia:hover,
+#pulseaudio:hover,
+#clock:hover {
+  color: @texto-hover-color;
+}
